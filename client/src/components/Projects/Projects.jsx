@@ -2,7 +2,7 @@ import React from 'react'
 
 function Projects() {
     return (
-        <div>Projects</div>
+        <h1>Projects</h1>
     )
 }
 
