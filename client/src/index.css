@@ -285,8 +285,7 @@ aside {
 
 .form-usuario {
   background-color: var(--gris2);
-  height: 100vh;
-  min-height: 800px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;

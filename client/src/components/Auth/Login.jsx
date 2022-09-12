@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 
 function Login() {
-    const [user, stateUser] = useState({
+    const [user, setUser] = useState({
         email: "",
         password: ""
     })
@@ -11,7 +11,7 @@ function Login() {
     const { email, password } = user;
 
     function onChageLog(e) {
-        stateUser({
+        setUser({
             ...user,
             [e.target.name]: e.target.value
         })

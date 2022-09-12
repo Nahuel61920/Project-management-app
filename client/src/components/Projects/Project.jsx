@@ -1,8 +1,13 @@
 import React from 'react'
 
-function Project() {
+function Project({project}) {
     return (
-        <div>Project</div>
+        <li>
+            <button
+                type="button"
+                className="btn btn-blank"
+            >{project.name}</button>
+        </li>
     )
 }
 
