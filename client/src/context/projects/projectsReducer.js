@@ -1,18 +1,40 @@
-import {NEW_PROJECT, ALL_PROJECTS} from '../../types'
+import {NEW_PROJECT, ALL_PROJECTS, ADD_PROJECT, ACTUAL_PROJECT, DELETE_PROJECT, ERROR_FORM} from '../../types';
 
 export default (state, action) => {
     switch (action.type) {
-        case "NEW_PROJECT":
+        case NEW_PROJECT:
         return {
             ...state,
             newProject: true,
         };
-        case "ALL_PROJECTS":
+        case ALL_PROJECTS:
         return {
             ...state,
             projects: action.payload,
         };
-
+        case ADD_PROJECT:
+        return {
+            ...state,
+            projects: [...state.projects, action.payload],
+            newProject: false,
+            errorForm: false,
+        };
+        case ACTUAL_PROJECT:
+        return {
+            ...state,
+            actualProject: state.projects.filter(project => project.id === action.payload),
+        };
+        case DELETE_PROJECT:
+        return {
+            ...state,
+            projects: state.projects.filter(project => project.id !== action.payload),
+            actualProject: null,
+        };
+        case ERROR_FORM:
+        return {
+            ...state,
+            errorForm: true,
+        };
         /* case "UPDATE_PROJECT":
         return {
             ...state,

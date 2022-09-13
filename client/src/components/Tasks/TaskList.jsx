@@ -1,7 +1,19 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import projectContext from '../../context/projects/projectsContext';
+
 import Task from './Task'
 
 function TaskList() {
+
+    const projectsContext = useContext(projectContext);
+    const { 
+        actualProject,
+        deleteProject
+    } = projectsContext;
+
+    if(!actualProject) return <h2>Select a project</h2>
+
+    const [project] = actualProject;
 
     const tasks = [
         {name: 'Choose Platform', state: true},
@@ -10,9 +22,14 @@ function TaskList() {
         {name: 'Choose Hosting', state: true},
     ]
 
+    // Eliminar un proyecto
+    const onClickDelete = () => {
+        deleteProject(project.id)
+    }
+
     return (
         <>
-            <h2>Project 1</h2>
+            <h2>{project.name}</h2>
 
             <ul className="listado-tareas">
                 {
@@ -34,6 +51,7 @@ function TaskList() {
             <button
                 type="button"
                 className="btn btn-eliminar"
+                onClick={onClickDelete}
             >Delete Project &times;</button>
             
         </>
