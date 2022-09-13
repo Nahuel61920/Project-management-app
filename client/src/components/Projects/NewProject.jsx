@@ -1,6 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
+import projectContext from '../../context/projects/projectsContext';
 
 function NewProject() {
+
+    const projectsContext = useContext(projectContext);
+    const { newProject, showNewProject } = projectsContext;
 
     const [project, setProject] = useState({
         name: ''
@@ -22,25 +26,29 @@ function NewProject() {
 
     return (
         <>
-            <button type="button" className="btn btn-block btn-primario">New Project</button>
+            <button type="button" className="btn btn-block btn-primario" onClick={() => showNewProject()}>New Project</button>
 
-            <form className="formulario-nuevo-proyecto">
-                <input
-                    type="text"
-                    className="input-text"
-                    placeholder="Project Name"
-                    name="name"
-                    value={name}
-                    onChange={onChangeProject}
-                />
+            {
+                newProject ? (
+                    <form className="formulario-nuevo-proyecto">
+                        <input
+                            type="text"
+                            className="input-text"
+                            placeholder="Project Name"
+                            name="name"
+                            value={name}
+                            onChange={onChangeProject}
+                        />
 
-                <input
-                    type="submit"
-                    className="btn btn-primario btn-block"
-                    value="Add Project"
-                    onClick={onSubmitProject}
-                />
-            </form>
+                        <input
+                            type="submit"
+                            className="btn btn-primario btn-block"
+                            value="Add Project"
+                            onClick={onSubmitProject}
+                        />
+                    </form>
+                ) : null
+            }
         </>
     )
 }
