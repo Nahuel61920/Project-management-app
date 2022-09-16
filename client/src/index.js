@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
 import ProjectsState from './context/projects/projectsState';
+import TaskState from './context/tasks/taskState';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ProjectsState>
-      <App />
+      <TaskState>
+        <App />
+      </TaskState>
     </ProjectsState>
   </React.StrictMode>
 );
