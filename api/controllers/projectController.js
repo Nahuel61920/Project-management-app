@@ -1,4 +1,4 @@
-const Project = require('../models/Projects');
+const Project = require('../models/Project');
 const { validationResult } = require('express-validator');
 
 exports.createProject = async (req, res) => {

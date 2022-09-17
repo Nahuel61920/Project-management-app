@@ -16,6 +16,7 @@ const PORT = process.env.PORT || 3001;
 app.use('/users', require('./routes/users'));
 app.use('/auth', require('./routes/auth'));
 app.use('/projects', require('./routes/projects'));
+app.use('/tasks', require('./routes/tasks'));
 
 
 // arrancar servidor
