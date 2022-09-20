@@ -1,11 +1,15 @@
 import React, { useState, useContext } from 'react'
 import { Link } from "react-router-dom";
 import AlertContext from '../../context/alerts/alertContext';
+import AuthContext from '../../context/auth/authContext';
 
 function SignIn() {
 
     const alertContext = useContext(AlertContext);
     const { alert, showAlert } = alertContext;
+
+    const authContext = useContext(AuthContext);
+    const { registerUser } = authContext;
 
     const [user, setUser] = useState({
         name: "",
@@ -46,7 +50,11 @@ function SignIn() {
         }
 
         // pasarlo al action
-        
+        registerUser({
+            name,
+            email,
+            password
+        })
 
     }
     return (

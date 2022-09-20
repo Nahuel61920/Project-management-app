@@ -4,6 +4,7 @@ import SignIn from './components/Auth/SignIn'
 import Projects from './components/Projects/Projects'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
+  console.log(process.env.REACT_APP_BACKEND_URL);
   return (
     <BrowserRouter>
       <Routes>

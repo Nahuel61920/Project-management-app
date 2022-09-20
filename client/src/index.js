@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import ProjectsState from './context/projects/projectsState';
 import TaskState from './context/tasks/taskState';
 import AlertState from './context/alerts/alertState';
+import AuthState from './context/auth/authState';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,7 +15,9 @@ root.render(
     <ProjectsState>
       <TaskState>
         <AlertState>
-          <App />
+          <AuthState>
+            <App />
+          </AuthState>
         </AlertState>
       </TaskState>
     </ProjectsState>
