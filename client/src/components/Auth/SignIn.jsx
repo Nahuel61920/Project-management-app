@@ -1,7 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link } from "react-router-dom";
+import AlertContext from '../../context/alerts/alertContext';
 
 function SignIn() {
+
+    const alertContext = useContext(AlertContext);
+    const { alert, showAlert } = alertContext;
+
     const [user, setUser] = useState({
         name: "",
         email: "",
@@ -21,9 +26,32 @@ function SignIn() {
 
     function onSubmitLog(e) {
         e.preventDefault()
+
+        // validar que no haya campos vacios
+        if (name.trim() === "" || email.trim() === "" || password.trim() === "" || confirm.trim() === "") {
+            showAlert("All fields are required", "alerta-error");
+            return;
+        }
+
+        // password minimo de 6 caracteres
+        if (password.length < 6) {
+            showAlert("Password must be at least 6 characters", "alerta-error");
+            return;
+        }
+
+        // los 2 password son iguales
+        if (password !== confirm) {
+            showAlert("Passwords do not match", "alerta-error");
+            return;
+        }
+
+        // pasarlo al action
+        
+
     }
     return (
         <div className='form-usuario'>
+            {alert ? (<div className={`alerta ${alert.category}`}>{alert.msg}</div>) : null}
             <div className='contenedor-form sombra-dark'>
                 <h1>SignIn</h1>
 

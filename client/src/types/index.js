@@ -13,3 +13,6 @@ export const UPDATE_TASK = "UPDATE_TASK";
 
 export const ERROR_FORM = "ERROR_FORM";
 export const ERROR_TASK_FORM = "ERROR_TASK_FORM";
+
+export const SHOW_ALERT = "SHOW_ALERT";
+export const HIDE_ALERT = "HIDE_ALERT";

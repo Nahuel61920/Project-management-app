@@ -6,13 +6,16 @@ import reportWebVitals from './reportWebVitals';
 
 import ProjectsState from './context/projects/projectsState';
 import TaskState from './context/tasks/taskState';
+import AlertState from './context/alerts/alertState';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ProjectsState>
       <TaskState>
-        <App />
+        <AlertState>
+          <App />
+        </AlertState>
       </TaskState>
     </ProjectsState>
   </React.StrictMode>
