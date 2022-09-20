@@ -17,10 +17,10 @@ app.use(express.json({ extended: true }));
 const PORT = process.env.PORT || 3001;
 
 // importar rutas
-app.use('/users', require('./routes/users'));
+app.use('/usuarios', require('./routes/usuarios'));
 app.use('/auth', require('./routes/auth'));
-app.use('/projects', require('./routes/projects'));
-app.use('/tasks', require('./routes/tasks'));
+app.use('/proyectos', require('./routes/proyectos'));
+app.use('/tareas', require('./routes/tareas'));
 
 
 // arrancar servidor
