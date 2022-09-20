@@ -48,3 +48,12 @@ exports.authenticatedUser = async (req, res) => {
     }
 }
 
+exports.userAuthenticated = async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id).select('-password');
+        res.json({ user });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ msg: 'There was an error' });
+    }
+}

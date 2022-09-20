@@ -1,18 +1,17 @@
 import react from "react";
+
+import { Switch, Route } from "react-router-dom";
 import Login from './components/Auth/Login'
 import SignIn from './components/Auth/SignIn'
 import Projects from './components/Projects/Projects'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 function App() {
-  console.log(process.env.REACT_APP_BACKEND_URL);
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Login />} />
-        <Route exact path="/sign-in" element={<SignIn />} />
-        <Route exact path="/projects" element={<Projects />} />
-      </Routes>
-    </BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Login} />
+        <Route exact path="/signin" component={SignIn} />
+        <Route exact path="/projects" component={Projects} />
+      </Switch>
   );
 }
 
