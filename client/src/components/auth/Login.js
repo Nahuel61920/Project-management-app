@@ -46,7 +46,7 @@ const Login = (props) => {
 
         // Validar que no haya campos vacios
         if(email.trim() === '' || password.trim() === '') {
-            mostrarAlerta('Todos los campos son obligatorios', 'alerta-error');
+            mostrarAlerta('All fields are required', 'alerta-error');
         }
 
         // Pasarlo al action
@@ -60,7 +60,7 @@ const Login = (props) => {
             { alerta ? ( <div className={`alerta ${alerta.categoria}`}> {alerta.msg} </div> )  : null }
 
             <div className="contenedor-form sombra-dark">
-                <h1>Iniciar Sesión</h1>
+                <h1>Log in</h1>
 
                 <form
                     onSubmit={onSubmit}
@@ -71,7 +71,7 @@ const Login = (props) => {
                             type="email"
                             id="email"
                             name="email"
-                            placeholder="Tu Email"
+                            placeholder="Your email"
                             value={email}
                             onChange={onChange}
                         />
@@ -83,19 +83,19 @@ const Login = (props) => {
                             type="password"
                             id="password"
                             name="password"
-                            placeholder="Tu Password"
+                            placeholder="Your password"
                             value={password}
                             onChange={onChange}
                         />
                     </div>
 
                     <div className="campo-form">
-                        <input type="submit" className="btn btn-primario btn-block" value="Iniciar Sesión" />
+                        <input type="submit" className="btn btn-primario btn-block" value="Login" />
                     </div>
                 </form>
 
                 <Link to={'/nueva-cuenta'} className="enlace-cuenta">
-                    Obtener Cuenta
+                Sign In
                 </Link>
             </div>
         </div>

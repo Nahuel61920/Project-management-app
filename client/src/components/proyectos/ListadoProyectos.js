@@ -25,7 +25,7 @@ const ListadoProyectos = () => {
     }, [mensaje]);
 
     // revisar si proyectos tiene contenido
-    if(proyectos.length === 0 ) return <p>No hay proyectos, comienza creando uno</p>;
+    if(proyectos.length === 0 ) return <p>No projects, start by creating one</p>;
 
     return ( 
 

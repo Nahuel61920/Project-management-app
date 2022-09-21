@@ -4,27 +4,29 @@
   --gris2: #2f3848;
   --gris3: #1a202d;
   --negro: #000000;
-  --headingFont:'Raleway', sans-serif;
-  --textFont:  'Roboto', sans-serif;
+  --headingFont: "Raleway", sans-serif;
+  --textFont: "Roboto", sans-serif;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
-} 
+}
 html {
   box-sizing: border-box;
   height: 100%;
-  font-size: 62.5%; 
+  font-size: 62.5%;
 }
 body {
   min-height: 100%;
   background-color: var(--gris1);
-  font-size: 16px; 
+  font-size: 16px;
   font-size: 1.6rem;
   font-family: var(--textFont);
 }
 
-
-h1, h2 {
+h1,
+h2 {
   font-family: var(--headingFont);
   font-weight: 900;
   margin: 0 0 4rem 0;
@@ -55,11 +57,11 @@ a {
   margin-top: 2rem;
   font-family: var(--headingFont);
   padding: 1.5rem;
-  font-size: 1.4;
+  font-size: 1.4rem;
   font-weight: 400;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   border: none;
-  transition: background-color .3s ease;
+  transition: background-color 0.3s ease;
 }
 .btn:hover {
   cursor: pointer;
@@ -93,23 +95,21 @@ a {
 
 @media (min-width: 768px) {
   .contenedor-app {
-      display: flex;
-      min-height: 100vh;
+    display: flex;
+    min-height: 100vh;
   }
 
   aside {
-      background-color: var(--blanco);
-      flex: 0 0 300px;
+    background-color: var(--blanco);
+    flex: 0 0 300px;
   }
   .seccion-principal {
-      flex: 1;
+    flex: 1;
   }
-
 }
 
-
 /* BARRA LATERAL */
-aside  {
+aside {
   padding: 3rem;
 }
 
@@ -121,7 +121,7 @@ aside  {
   border-radius: 0;
   background-color: var(--gris1);
 }
-.formulario-nuevo-proyecto .input-text::placeholder{
+.formulario-nuevo-proyecto .input-text::placeholder {
   color: var(--gris2);
 }
 .proyectos {
@@ -178,7 +178,7 @@ aside  {
 .input-text {
   padding: 1rem;
   border: none;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   flex: 1;
   width: 100%;
 }
@@ -187,8 +187,6 @@ aside  {
 .contenedor-tareas {
   padding: 4rem;
 }
-
-
 
 .listado-tareas {
   max-width: 600px;
@@ -199,21 +197,20 @@ aside  {
   display: flex;
   justify-content: space-between;
   background-color: var(--blanco);
-  padding: .5rem 2rem;
+  padding: 0.5rem 2rem;
   align-items: center;
   margin-bottom: 1rem;
-  border-radius: .5rem;
-
+  border-radius: 0.5rem;
 }
 .sombra {
-  -webkit-box-shadow: 0px 4px 10px -3px rgba(117,117,117,1);
-  -moz-box-shadow: 0px 4px 10px -3px rgba(117,117,117,1);
-  box-shadow: 0px 4px 10px -3px rgba(117,117,117,1);
+  -webkit-box-shadow: 0px 4px 10px -3px rgba(117, 117, 117, 1);
+  -moz-box-shadow: 0px 4px 10px -3px rgba(117, 117, 117, 1);
+  box-shadow: 0px 4px 10px -3px rgba(117, 117, 117, 1);
 }
 .sombra-dark {
-  -webkit-box-shadow: 0px 6px 11px -8px rgba(0,0,0,0.9);
-  -moz-box-shadow: 0px 6px 11px -8px rgba(0,0,0,0.9);
-  box-shadow: 0px 6px 11px -8px rgba(0,0,0,0.9);
+  -webkit-box-shadow: 0px 6px 11px -8px rgba(0, 0, 0, 0.9);
+  -moz-box-shadow: 0px 6px 11px -8px rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 6px 11px -8px rgba(0, 0, 0, 0.9);
 }
 .tarea .acciones .btn:first-of-type {
   margin-right: 1rem;
@@ -224,8 +221,8 @@ aside  {
   padding-right: 2rem;
 }
 .tarea .btn {
-  padding: .8rem;
-  font-size:1.4rem;
+  padding: 0.8rem;
+  font-size: 1.4rem;
   border-radius: 0;
   margin: 0;
 }
@@ -233,13 +230,13 @@ aside  {
 .estado {
   margin-right: 1rem;
 }
-.estado button, 
+.estado button,
 .mensaje {
   font-weight: 900;
   font-family: var(--textFont);
   font-size: 1rem;
-  padding: .5rem;
-  border-radius: .5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
   border: none;
 }
@@ -253,11 +250,11 @@ aside  {
 }
 .completo,
 .correcto {
-  background-color: rgba(154, 252, 154, .3);
+  background-color: rgba(154, 252, 154, 0.3);
   color: var(--gris3);
 }
-.incompleto{
-  background-color: rgba(255, 178, 178, .4);
+.incompleto {
+  background-color: rgba(255, 178, 178, 0.4);
   color: var(--gris3);
 }
 .error {
@@ -266,8 +263,6 @@ aside  {
   background-color: rgb(170, 0, 0);
   color: var(--blanco);
 }
-
-
 
 .tarea-enter,
 .proyecto-enter {
@@ -289,26 +284,25 @@ aside  {
 }
 
 .form-usuario {
-    background-color: var(--gris2);
-    height: 100vh;
-    min-height: 800px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-color: var(--gris2);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contenedor-form {
-    padding: 5rem 3rem;
-    max-width: 500px;
-    width: 95%;
-    background-color: var(--blanco);
-    border-radius: 1rem;
+  padding: 5rem 3rem;
+  max-width: 500px;
+  width: 95%;
+  background-color: var(--blanco);
+  border-radius: 1rem;
 }
 
 .campo-form {
-    display: flex;
-    margin-bottom: 2rem;
-    align-items: center;
+  display: flex;
+  margin-bottom: 2rem;
+  align-items: center;
 }
 .campo-form:last-of-type {
   margin: 0;
@@ -318,7 +312,7 @@ aside  {
   font-family: var(--textFont);
 }
 .campo-form input[type="password"],
-.campo-form input[type="email"], 
+.campo-form input[type="email"],
 .campo-form input[type="text"] {
   border: 1px solid #e1e1e1;
   padding: 1rem;
@@ -328,7 +322,7 @@ aside  {
 .enlace-cuenta {
   margin-top: 2rem;
   display: block;
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .alerta {
@@ -344,12 +338,12 @@ aside  {
   text-align: center;
   width: 100%;
 }
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .alerta {
-      width: auto;
-      top: 30px;
-      right: 10px;
-      left: auto;
+    width: auto;
+    top: 30px;
+    right: 10px;
+    left: auto;
   }
 }
 

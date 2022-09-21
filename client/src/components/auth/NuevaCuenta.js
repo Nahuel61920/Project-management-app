@@ -51,19 +51,19 @@ const NuevaCuenta = (props) => {
             email.trim() === '' || 
             password.trim() === '' || 
             confirmar.trim() === '' ) {
-                mostrarAlerta('Todos los campos son obligatorios', 'alerta-error');
+                mostrarAlerta('All fields are required', 'alerta-error');
                 return;
             }
 
         // Password minimo de 6 caracteres
         if(password.length < 6) {
-            mostrarAlerta('El password debe ser de al menos 6 caracteres', 'alerta-error');
+            mostrarAlerta('Password must be at least 6 characters', 'alerta-error');
             return;
         }
 
         // Los 2 passwords son iguales
         if(password !== confirmar) {
-            mostrarAlerta('Los passwords no son iguales', 'alerta-error');
+            mostrarAlerta('Passwords do not match', 'alerta-error');
             return;
         }
 
@@ -81,18 +81,18 @@ const NuevaCuenta = (props) => {
         <div className="form-usuario">
             { alerta ? ( <div className={`alerta ${alerta.categoria}`}> {alerta.msg} </div> )  : null }
             <div className="contenedor-form sombra-dark">
-                <h1>Obtener una cuenta</h1>
+                <h1>Sign In</h1>
 
                 <form
                     onSubmit={onSubmit}
                 >
                     <div className="campo-form">
-                        <label htmlFor="nombre">Nombre</label>
+                        <label htmlFor="nombre">Name</label>
                         <input 
                             type="text"
                             id="nombre"
                             name="nombre"
-                            placeholder="Tu Nombre"
+                            placeholder="Your Name"
                             value={nombre}
                             onChange={onChange}
                         />
@@ -104,7 +104,7 @@ const NuevaCuenta = (props) => {
                             type="email"
                             id="email"
                             name="email"
-                            placeholder="Tu Email"
+                            placeholder="Your Email"
                             value={email}
                             onChange={onChange}
                         />
@@ -116,19 +116,19 @@ const NuevaCuenta = (props) => {
                             type="password"
                             id="password"
                             name="password"
-                            placeholder="Tu Password"
+                            placeholder="Your Password"
                             value={password}
                             onChange={onChange}
                         />
                     </div>
 
                     <div className="campo-form">
-                        <label htmlFor="confirmar">Confirmar Password</label>
+                        <label htmlFor="confirmar">Confirm Password</label>
                         <input 
                             type="password"
                             id="confirmar"
                             name="confirmar"
-                            placeholder="Repite tu Password"
+                            placeholder="Repeat your Password"
                             value={confirmar}
                             onChange={onChange}
                         />
@@ -140,7 +140,7 @@ const NuevaCuenta = (props) => {
                 </form>
 
                 <Link to={'/'} className="enlace-cuenta">
-                    Volver a Iniciar Sesión
+                    Login
                 </Link>
             </div>
         </div>
